@@ -1,0 +1,15 @@
+# Netlify configuration for Thunder Fighter
+[build]
+  publish = "."
+
+# Redirect all routes to index.html (SPA fallback)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Set cache headers for static assets
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
